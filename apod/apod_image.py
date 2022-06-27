@@ -3,7 +3,7 @@ from io import BytesIO
 from typing import Protocol
 
 import requests
-from PIL.Image import Image
+from PIL import Image
 
 from .exceptions import ApodRetrieveError
 
@@ -30,7 +30,7 @@ class ApodImageDownloader:
             raise ApodRetrieveError(
                 response, "APOD image was imposible to be downloaded."
             )
-        image = Image.frombytes(BytesIO(response.content))
+        image = Image.open(BytesIO(response.content))
         return image
 
     def save_image(self, dir_path: str, name: str) -> None:

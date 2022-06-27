@@ -74,6 +74,12 @@ class ApodExplorer:
         img_url = f"{self.APOD_URL}{img_href}"
         return img_url
 
+    def check_for_videos(self) -> Union[str, None]:
+        raise NotImplementedError("Will be implmented in future updates.")
+
+    def get_description(self) -> str:
+        pass
+
 
 def main():
     pass

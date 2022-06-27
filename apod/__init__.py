@@ -1,5 +1,12 @@
-from src.apod_web import ApodExplorer
-from src.apod_image import ApodImageDownloader, Image
+"""
+The apod package pretend to create a easy interface to interact with the apod web page. It can download the apod image of the day
+using the get_apod_image function.
+"""
+
+__version__ = "0.0.1"
+
+from .apod_web import ApodExplorer
+from .apod_image import ApodImageDownloader, Image
 
 
 def get_apod_image(year: int, month: int, day: int) -> Image:

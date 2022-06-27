@@ -4,6 +4,8 @@
 #
 #    pip-compile requirements_dev.in
 #
+attrs==21.4.0
+    # via pytest
 black==22.3.0
     # via -r requirements_dev.in
 bleach==5.0.0
@@ -50,6 +52,8 @@ importlib-metadata==4.12.0
     # via
     #   keyring
     #   twine
+iniconfig==1.1.1
+    # via pytest
 jeepney==0.8.0
     # via
     #   keyring
@@ -67,6 +71,7 @@ mypy-extensions==0.4.3
 packaging==21.3
     # via
     #   build
+    #   pytest
     #   tox
 pathspec==0.9.0
     # via black
@@ -79,9 +84,13 @@ platformdirs==2.5.2
     #   black
     #   virtualenv
 pluggy==1.0.0
-    # via tox
+    # via
+    #   pytest
+    #   tox
 py==1.11.0
-    # via tox
+    # via
+    #   pytest
+    #   tox
 pycodestyle==2.8.0
     # via flake8
 pycparser==2.21
@@ -94,6 +103,8 @@ pygments==2.12.0
     #   rich
 pyparsing==3.0.9
     # via packaging
+pytest==7.1.2
+    # via -r requirements_dev.in
 readme-renderer==35.0
     # via twine
 requests==2.28.0
@@ -124,6 +135,7 @@ tomli==2.0.1
     #   flit
     #   mypy
     #   pep517
+    #   pytest
 tomli-w==1.0.0
     # via flit
 tox==3.25.0

@@ -1,6 +1,7 @@
-.venv/*
-.vscode/*
-dist/*
+.venv
+.vscode
+dist
 __pycache__
 saved_images
 .tox
+*cache*

@@ -6,4 +6,5 @@ flit
 twine
 tox
 build
-flake8 #
+flake8 
+pytest

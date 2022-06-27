@@ -13,10 +13,10 @@ class ApodImageDownloaderProtocol(Protocol):
 
     image_url: str
 
-    def get_image() -> Image:
+    def get_image(self) -> Image:
         ...
 
-    def save_image(path: str, name: str) -> None:
+    def save_image(self, path: str, name: str) -> None:
         ...
 
 

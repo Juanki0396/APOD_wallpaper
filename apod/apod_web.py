@@ -1,12 +1,10 @@
-from io import BytesIO
-from functools import cached_property
 from time import localtime
 from typing import Protocol, Union
 
 
 import requests
 from bs4 import BeautifulSoup
-from PIL import Image
+
 
 from .exceptions import ApodDateError, ApodRetrieveError
 
@@ -14,16 +12,16 @@ from .exceptions import ApodDateError, ApodRetrieveError
 class ApodWebProtocol(Protocol):
     """Defines the dynamics to interact with the web server"""
 
-    def make_http_request(year: int, month: int, day: int) -> int:
+    def make_http_request(self, year: int, month: int, day: int) -> int:
         ...
 
-    def check_for_images() -> Union[None, str]:
+    def check_for_images(self) -> Union[None, str]:
         ...
 
-    def check_for_video() -> Union[None, str]:
+    def check_for_video(self) -> Union[None, str]:
         ...
 
-    def get_description() -> str:
+    def get_description(self) -> str:
         ...
 
 
@@ -34,7 +32,7 @@ class ApodExplorer:
 
     def __init__(self) -> None:
 
-        self.response: requests.Response = None
+        self.response: requests.Response
 
     @property
     def html(self) -> BeautifulSoup:

@@ -19,7 +19,7 @@ class TestApodExplorer(unittest.TestCase):
     def test_request_wrong_date(self):
         explorer = ApodExplorer()
         with self.assertRaises(ApodDateError):
-            code = explorer.make_http_request(year=1900, month=1, day=9)
+            explorer.make_http_request(year=1900, month=1, day=9)
 
     def test_check_for_images(self):
         explorer = ApodExplorer()

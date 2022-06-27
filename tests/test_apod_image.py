@@ -20,7 +20,7 @@ class TestApodImageDownloader(unittest.TestCase):
         url = "https://apod.nasa.gov/apod/image/2201/SDSADASDas.jpg"
         downloader = ApodImageDownloader(url)
         with self.assertRaises(ApodRetrieveError):
-            image = downloader.get_image()
+            downloader.get_image()
 
     def test_save_image(self):
         """Checks if an apod can be saved on a existing directory"""

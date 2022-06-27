@@ -13,8 +13,8 @@ class TestApod(unittest.TestCase):
 
     def test_wrong_date(self):
         with self.assertRaises(ApodDateError):
-            image = get_apod_image(year=1900, month=1, day=9)
+            get_apod_image(year=1900, month=1, day=9)
 
     def test_try_to_get_video(self):
         with self.assertRaises(ApodImageError):
-            image = get_apod_image(year=2022, month=1, day=25)
+            get_apod_image(year=2022, month=1, day=25)

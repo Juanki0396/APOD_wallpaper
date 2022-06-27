@@ -18,3 +18,7 @@ dependencies = [
 
 [project.urls]
 Source = "https://github.com/Juanki0396/APOD_wallpaper"
+
+[tool.mypy]
+mypy_path = "apod"
+ignore_missing_imports = true

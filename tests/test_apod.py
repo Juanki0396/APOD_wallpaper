@@ -3,7 +3,7 @@ import unittest
 from PIL.Image import Image
 
 from apod import get_apod_image
-from apod.exceptions import ApodDateError, ApodRetrieveError
+from apod.exceptions import ApodDateError, ApodImageError
 
 
 class TestApod(unittest.TestCase):
@@ -16,5 +16,5 @@ class TestApod(unittest.TestCase):
             image = get_apod_image(year=1900, month=1, day=9)
 
     def test_try_to_get_video(self):
-        with self.assertRaises(ApodRetrieveError):
+        with self.assertRaises(ApodImageError):
             image = get_apod_image(year=2022, month=1, day=25)

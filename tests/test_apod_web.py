@@ -23,10 +23,16 @@ class TestApodExplorer(unittest.TestCase):
 
     def test_check_for_images(self):
         explorer = ApodExplorer()
-        code = explorer.make_http_request(year=2022, month=1, day=9)
+        explorer.make_http_request(year=2022, month=1, day=9)
         img_url = (
             "https://apod.nasa.gov/apod/image/2201/JupiterOpal_HubbleMasztalerz_960.jpg"
         )
         self.assertEqual(img_url, explorer.check_for_images())
-        code = explorer.make_http_request(year=2022, month=1, day=10)
+        explorer.make_http_request(year=2022, month=1, day=10)
         self.assertIsNone(explorer.check_for_images())
+
+    def test_check_for_videos(self):
+        pass
+
+    def test_get_description(self):
+        pass

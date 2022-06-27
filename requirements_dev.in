@@ -6,3 +6,4 @@ flit
 twine
 tox
 build
+flake8 #

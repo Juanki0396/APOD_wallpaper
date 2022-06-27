@@ -24,7 +24,7 @@ class ApodImageDownloader:
     def __init__(self, image_url: str) -> None:
         self.url = image_url
 
-    def get_image(self) -> Image:
+    def get_image(self) -> Image.Image:
         response = requests.get(self.url)
         if response.status_code != requests.codes.ok:
             raise ApodRetrieveError(

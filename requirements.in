@@ -1,4 +1,7 @@
-beautifulsoup4
+# development tools
 black
+mypy
+# apod package requirements
+beautifulsoup4
 requests
 Pillow

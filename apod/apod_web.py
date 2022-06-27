@@ -36,13 +36,13 @@ class ApodExplorer:
 
         self.response: requests.Response = None
 
-    @cached_property
+    @property
     def html(self) -> BeautifulSoup:
         return BeautifulSoup(self.response.text, "html.parser")
 
     def generate_date_url(self, year: int, month: int, day: int) -> str:
         """Generate the apod url for the requested date"""
-        f"{self.APOD_URL}{str(year)[-2:]}{month:02d}{day:02d}"
+        return f"{self.APOD_URL}ap{str(year)[-2:]}{month:02d}{day:02d}.html"
 
     def make_http_request(
         self,
@@ -66,11 +66,11 @@ class ApodExplorer:
 
     def check_for_images(self) -> Union[str, None]:
         img_tag = self.html.find("img")
-        img_href = img_tag["src"]
 
-        if len(img_href) == 0:
+        if img_tag is None:
             return None
 
+        img_href = img_tag["src"]
         img_url = f"{self.APOD_URL}{img_href}"
         return img_url
 
@@ -78,7 +78,7 @@ class ApodExplorer:
         raise NotImplementedError("Will be implmented in future updates.")
 
     def get_description(self) -> str:
-        pass
+        raise NotImplementedError("Will be implmented in future updates.")
 
 
 def main():

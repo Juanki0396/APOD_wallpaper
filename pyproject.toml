@@ -9,6 +9,12 @@ readme = "README.md"
 license = {file = "LICENSE"}
 classifiers = ["License :: OSI Approved :: MIT License"]
 dynamic = ["version", "description"]
+requires-python = ">=3.6"
+dependencies = [
+    "requests",
+    "Pillow",
+    "beautifulsoup4"
+]
 
 [project.urls]
 Source = "https://github.com/Juanki0396/APOD_wallpaper"

@@ -30,7 +30,7 @@ class ApodImageDownloader:
             raise ApodRetrieveError(
                 response, "APOD image was imposible to be downloaded."
             )
-        image = Image(BytesIO(response.content))
+        image = Image.frombytes(BytesIO(response.content))
         return image
 
     def save_image(self, dir_path: str, name: str) -> None:

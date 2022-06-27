@@ -30,6 +30,8 @@ class TestApodImageDownloader(unittest.TestCase):
         fullpath = os.path.join(path, name)
         if os.path.exists(fullpath):
             os.remove(fullpath)
+        elif not os.path.exists(path):
+            os.mkdir(path)
         downloader = ApodImageDownloader(url)
         downloader.save_image(path, name)
         self.assertTrue(os.path.exists(fullpath))
